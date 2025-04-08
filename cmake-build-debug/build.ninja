@@ -139,6 +139,39 @@ build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kośc
   TARGET_IMPLIB = liblab3.dll.a
   TARGET_PDB = lab3.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target lab4
+
+
+#############################################
+# Order-only phony target for lab4
+
+build cmake_object_order_depends_target_lab4: phony || .
+
+build CMakeFiles/lab4.dir/lab4/lab4.c.obj: C_COMPILER__lab4_unscanned_Debug C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab4/lab4.c || cmake_object_order_depends_target_lab4
+  DEP_FILE = CMakeFiles\lab4.dir\lab4\lab4.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab4.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab4.dir\lab4
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target lab4
+
+
+#############################################
+# Link the executable C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab4\lab4.exe
+
+build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab4/lab4.exe: C_EXECUTABLE_LINKER__lab4_Debug CMakeFiles/lab4.dir/lab4/lab4.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\lab4.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = "C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab4\lab4.exe"
+  TARGET_IMPLIB = liblab4.dll.a
+  TARGET_PDB = lab4.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -177,6 +210,10 @@ build lab3: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tad
 
 build lab3.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab3/lab3.exe
 
+build lab4: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab4/lab4.exe
+
+build lab4.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab4/lab4.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -185,7 +222,7 @@ build lab3.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$
 #############################################
 # Folder: C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/cmake-build-debug
 
-build all: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab1/lab1.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab2/lab2.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab3/lab3.exe
+build all: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab1/lab1.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab2/lab2.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab3/lab3.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab4/lab4.exe
 
 # =============================================================================
 # Built-in targets
