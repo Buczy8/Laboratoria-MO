@@ -205,6 +205,39 @@ build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kośc
   TARGET_IMPLIB = liblab5.dll.a
   TARGET_PDB = lab5.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target lab6
+
+
+#############################################
+# Order-only phony target for lab6
+
+build cmake_object_order_depends_target_lab6: phony || .
+
+build CMakeFiles/lab6.dir/lab6/lab6.c.obj: C_COMPILER__lab6_unscanned_Debug C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab6/lab6.c || cmake_object_order_depends_target_lab6
+  DEP_FILE = CMakeFiles\lab6.dir\lab6\lab6.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab6.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab6.dir\lab6
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target lab6
+
+
+#############################################
+# Link the executable C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab6\lab6.exe
+
+build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab6/lab6.exe: C_EXECUTABLE_LINKER__lab6_Debug CMakeFiles/lab6.dir/lab6/lab6.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\lab6.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = "C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab6\lab6.exe"
+  TARGET_IMPLIB = liblab6.dll.a
+  TARGET_PDB = lab6.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -251,6 +284,10 @@ build lab5: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tad
 
 build lab5.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab5/lab5.exe
 
+build lab6: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab6/lab6.exe
+
+build lab6.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab6/lab6.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -259,7 +296,7 @@ build lab5.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$
 #############################################
 # Folder: C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/cmake-build-debug
 
-build all: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab1/lab1.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab2/lab2.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab3/lab3.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab4/lab4.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab5/lab5.exe
+build all: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab1/lab1.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab2/lab2.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab3/lab3.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab4/lab4.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab5/lab5.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab6/lab6.exe
 
 # =============================================================================
 # Built-in targets

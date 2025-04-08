@@ -17,3 +17,6 @@ set_target_properties(lab4 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_S
 
 add_executable(lab5 lab5/lab5.c)
 set_target_properties(lab5 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab5 )
+
+add_executable(lab6 lab6/lab6.c)
+set_target_properties(lab6 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab6 )
