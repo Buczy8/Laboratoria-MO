@@ -1,0 +1,9 @@
+A[i][j] nie robi się tak
+
+
+index[i]=i
+A[index[i]][j]
+
+
+b[i]
+b[index[i]]
