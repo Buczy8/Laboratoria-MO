@@ -1,0 +1,8 @@
+log_10(E) = Log_10|A| + plog_10(h)
+    y           q           x
+
+    y = px+q
+        ^
+        |
+        Rzad dokładności
+        p = tg(Alfa)
