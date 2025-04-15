@@ -15,7 +15,7 @@ void LU(long double A[N][N], int index[N]) {
     int i, j, k = 0;
     for (k = 0; k < N-1; k++) {
         for (i = k + 1; i < N; i++) {
-            if (A[index[k]][k] == 0) {
+            if (fabsl(A[index[k]][k]) <= 10e-10 ) {
                 int maxIndex = k;
                 for (j = k + 1; j < N; j++) {
                     if (fabsl(A[index[j]][k]) > fabsl(A[index[maxIndex]][k])) {
@@ -48,9 +48,7 @@ void rowanie(long double A[N][N], long double b[N], int index[N]) {
             b[index[i]] -= A[index[i]][j] * b[index[j]];
         }
     }
-    for (int i = 0; i < N; i++) {
-        printf("y[%d] = %.2Lf\n", i, b[index[i]]);
-    }
+
 //    u_11*x_1 + u_12*x_2 + ... + x_n = y_1
 //    u_22*x_2 + ... + x_n = y_2
 //    u_nn*x_n = y_n
