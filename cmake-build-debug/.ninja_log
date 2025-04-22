@@ -1,29 +1,17 @@
 # ninja log v6
-5	118	7658219650579091	CMakeFiles/lab4.dir/lab4/lab4.c.obj	3769d0a9db10e041
 1250	1608	7658210089013378	laboratoria.exe	dba7d7a5a9b6fbcf
-24	633	7658214011356236	CMakeFiles/lab1.dir/lab1/lab1.c.obj	5962ca12f714adb6
-5	118	7658215026626121	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab1/lab1.exe	2646bf7a4789f11
+134	232	7658956096257506	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab5/lab5.exe	17411d0e505fcbad
 119	235	7658219651712036	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab4/lab4.exe	f8286ca9aa5d14c5
 132	251	7658217060240146	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab2/lab2.exe	d723323258c2c7c8
+5	118	7658215026626121	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab1/lab1.exe	2646bf7a4789f11
 635	859	7658214017421095	lab1.exe	74b1ba24839a7f21
-5	131	7658217059057634	CMakeFiles/lab2.dir/lab2/lab2.c.obj	78ee6987c08a40d7
-31	135	7658219070740958	CMakeFiles/lab3.dir/lab3/lab3.c.obj	cf9c5a19f93b5927
 136	244	7658219071791605	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab3/lab3.exe	2208e6e33c615692
-25	133	7658956095174276	CMakeFiles/lab5.dir/lab5/lab5.c.obj	78f74dd7b4c46343
-134	232	7658956096257506	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab5/lab5.exe	17411d0e505fcbad
 3	84	7662705127683148	CMakeFiles/lab6.dir/lab6/lab6.c.obj	98832945b95ab671
 84	189	7662705128493484	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab6/lab6.exe	67bc921b627d1563
-41	148	7664532363924435	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
-149	287	7664532365012232	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
-36	133	7664533371645312	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
-134	234	7664533372624770	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
-39	143	7664535408128964	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
-144	244	7664535409175580	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
-48	148	7664536544302221	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
-149	243	7664536545314875	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
-40	139	7664536755166604	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
-140	274	7664536756171399	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
-48	181	7664537537840177	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
-183	297	7664537539197779	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
 39	138	7664537782073265	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
 139	243	7664537783073538	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
+3	85	7667116846277517	CMakeFiles/lab8.dir/lab8/lab8.c.obj	5943bbf0202039b7
+45	1295	7670471339477427	CMakeFiles/lab8.dir/lab8/lab8.cpp.obj	607979f8f3bd038e
+1297	1486	7670471352000693	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab8/lab8.exe	91fb91a532b1e799
+3	172	7670551791591698	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
+172	329	7670551793289585	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
