@@ -156,7 +156,7 @@ int main()
         long double h_max = 10e-1;
 
         // Logarytmiczny rozkład h między h_min a h_max
-        long double h = h_min * pow(10.0, i * log10l(h_max / h_min) / (num_steps - 1));
+        long double h = h_min * powl(10.0, i * log10l(h_max / h_min) / (num_steps - 1));
 
         // punkt początkowy
         long double forward_left = forward_diff(x_left, h, cosl);
@@ -190,13 +190,6 @@ int main()
         errors_long[4].push_back(central_middle_error);
         errors_long[5].push_back(backward_right_error);
         errors_long[6].push_back(three_point_backward_right_error);
-
-        // cout << scientific <<  "h = " << h << endl
-        //         << scientific << "forward = " << forward_left << " error = " << forward_left_error << endl
-        //         << scientific <<  "backward = " << backward_right << " error = " << backward_right_error << endl
-        //         << scientific << "central = " << central_middle << " error = " << central_middle_error << endl
-        //         << scientific <<  "three_point_forward = " << three_point_forward_left << " error = " << three_point_forward_left_error << endl
-        //         << scientific <<  "three_point_backward = " << three_point_backward_right << " error = " << three_point_backward_right_error  << endl << endl;
 
         file2 << log10l(h) << " " << log10l(forward_left_error) << " " << log10l(three_point_forward_left_error) << " "
             << log10l(forward_middle_error) << " " << log10l(backward_middle_error) << " " <<
