@@ -22,8 +22,14 @@ set(CMAKE_CXX_STANDARD 23)
 #add_executable(lab6 lab6/lab6.c)
 #set_target_properties(lab6 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab6 )
 #
-add_executable(lab7 lab7/lab7.c)
-set_target_properties(lab7 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab7 )
+#add_executable(lab7 lab7/lab7.c)
+#set_target_properties(lab7 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab7 )
 
-add_executable(lab8 lab8/lab8.cpp)
-set_target_properties(lab8 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab8 )
+#add_executable(lab8 lab8/lab8.cpp)
+#set_target_properties(lab8 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab8 )
+
+add_executable(lab9 lab9/lab9.c)
+set_target_properties(lab9 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab9 )
+
+add_executable(lab10 lab10/lab10.c)
+set_target_properties(lab10 PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lab10 )
