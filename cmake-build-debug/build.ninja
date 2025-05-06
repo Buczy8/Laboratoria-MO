@@ -41,70 +41,70 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target lab7
+# Object build statements for EXECUTABLE target lab9
 
 
 #############################################
-# Order-only phony target for lab7
+# Order-only phony target for lab9
 
-build cmake_object_order_depends_target_lab7: phony || .
+build cmake_object_order_depends_target_lab9: phony || .
 
-build CMakeFiles/lab7.dir/lab7/lab7.c.obj: C_COMPILER__lab7_unscanned_Debug C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab7/lab7.c || cmake_object_order_depends_target_lab7
-  DEP_FILE = CMakeFiles\lab7.dir\lab7\lab7.c.obj.d
+build CMakeFiles/lab9.dir/lab9/lab9.c.obj: C_COMPILER__lab9_unscanned_Debug C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab9/lab9.c || cmake_object_order_depends_target_lab9
+  DEP_FILE = CMakeFiles\lab9.dir\lab9\lab9.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\lab7.dir
-  OBJECT_FILE_DIR = CMakeFiles\lab7.dir\lab7
+  OBJECT_DIR = CMakeFiles\lab9.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab9.dir\lab9
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target lab7
+# Link build statements for EXECUTABLE target lab9
 
 
 #############################################
-# Link the executable C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab7\lab7.exe
+# Link the executable C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab9\lab9.exe
 
-build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab7/lab7.exe: C_EXECUTABLE_LINKER__lab7_Debug CMakeFiles/lab7.dir/lab7/lab7.c.obj
+build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab9/lab9.exe: C_EXECUTABLE_LINKER__lab9_Debug CMakeFiles/lab9.dir/lab9/lab9.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\lab7.dir
+  OBJECT_DIR = CMakeFiles\lab9.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = "C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab7\lab7.exe"
-  TARGET_IMPLIB = liblab7.dll.a
-  TARGET_PDB = lab7.exe.dbg
+  TARGET_FILE = "C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab9\lab9.exe"
+  TARGET_IMPLIB = liblab9.dll.a
+  TARGET_PDB = lab9.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target lab8
+# Object build statements for EXECUTABLE target lab10
 
 
 #############################################
-# Order-only phony target for lab8
+# Order-only phony target for lab10
 
-build cmake_object_order_depends_target_lab8: phony || .
+build cmake_object_order_depends_target_lab10: phony || .
 
-build CMakeFiles/lab8.dir/lab8/lab8.cpp.obj: CXX_COMPILER__lab8_unscanned_Debug C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab8/lab8.cpp || cmake_object_order_depends_target_lab8
-  DEP_FILE = CMakeFiles\lab8.dir\lab8\lab8.cpp.obj.d
-  FLAGS = -g -std=gnu++23 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\lab8.dir
-  OBJECT_FILE_DIR = CMakeFiles\lab8.dir\lab8
+build CMakeFiles/lab10.dir/lab10/lab10.c.obj: C_COMPILER__lab10_unscanned_Debug C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab10/lab10.c || cmake_object_order_depends_target_lab10
+  DEP_FILE = CMakeFiles\lab10.dir\lab10\lab10.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\lab10.dir
+  OBJECT_FILE_DIR = CMakeFiles\lab10.dir\lab10
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target lab8
+# Link build statements for EXECUTABLE target lab10
 
 
 #############################################
-# Link the executable C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab8\lab8.exe
+# Link the executable C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab10\lab10.exe
 
-build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab8/lab8.exe: CXX_EXECUTABLE_LINKER__lab8_Debug CMakeFiles/lab8.dir/lab8/lab8.cpp.obj
+build C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab10/lab10.exe: C_EXECUTABLE_LINKER__lab10_Debug CMakeFiles/lab10.dir/lab10/lab10.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\lab8.dir
+  OBJECT_DIR = CMakeFiles\lab10.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = "C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab8\lab8.exe"
-  TARGET_IMPLIB = liblab8.dll.a
-  TARGET_PDB = lab8.exe.dbg
+  TARGET_FILE = "C:\Users\pawel\OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki\studia\Semestr 4\Metody obliczeniowe\Laboratoria\lab10\lab10.exe"
+  TARGET_IMPLIB = liblab10.dll.a
+  TARGET_PDB = lab10.exe.dbg
 
 
 #############################################
@@ -132,13 +132,13 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build lab7: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab7/lab7.exe
+build lab10: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab10/lab10.exe
 
-build lab7.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab7/lab7.exe
+build lab10.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab10/lab10.exe
 
-build lab8: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab8/lab8.exe
+build lab9: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab9/lab9.exe
 
-build lab8.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab8/lab8.exe
+build lab9.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab9/lab9.exe
 
 # =============================================================================
 # Folder targets.
@@ -148,7 +148,7 @@ build lab8.exe: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$
 #############################################
 # Folder: C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/cmake-build-debug
 
-build all: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab7/lab7.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab8/lab8.exe
+build all: phony C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab9/lab9.exe C$:/Users/pawel/OneDrive$ -$ Politechnika$ Krakowska$ im.$ Tadeusza$ Kościuszki/studia/Semestr$ 4/Metody$ obliczeniowe/Laboratoria/lab10/lab10.exe
 
 # =============================================================================
 # Built-in targets

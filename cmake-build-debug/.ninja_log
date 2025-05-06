@@ -1,17 +1,43 @@
 # ninja log v6
-1250	1608	7658210089013378	laboratoria.exe	dba7d7a5a9b6fbcf
 134	232	7658956096257506	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab5/lab5.exe	17411d0e505fcbad
+1250	1608	7658210089013378	laboratoria.exe	dba7d7a5a9b6fbcf
+5	118	7658215026626121	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab1/lab1.exe	2646bf7a4789f11
 119	235	7658219651712036	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab4/lab4.exe	f8286ca9aa5d14c5
 132	251	7658217060240146	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab2/lab2.exe	d723323258c2c7c8
-5	118	7658215026626121	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab1/lab1.exe	2646bf7a4789f11
-635	859	7658214017421095	lab1.exe	74b1ba24839a7f21
 136	244	7658219071791605	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab3/lab3.exe	2208e6e33c615692
+635	859	7658214017421095	lab1.exe	74b1ba24839a7f21
 3	84	7662705127683148	CMakeFiles/lab6.dir/lab6/lab6.c.obj	98832945b95ab671
 84	189	7662705128493484	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab6/lab6.exe	67bc921b627d1563
-39	138	7664537782073265	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
-139	243	7664537783073538	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
-3	85	7667116846277517	CMakeFiles/lab8.dir/lab8/lab8.c.obj	5943bbf0202039b7
-45	1295	7670471339477427	CMakeFiles/lab8.dir/lab8/lab8.cpp.obj	607979f8f3bd038e
-1297	1486	7670471352000693	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab8/lab8.exe	91fb91a532b1e799
 3	172	7670551791591698	CMakeFiles/lab7.dir/lab7/lab7.c.obj	2ec6d27142bdd32d
 172	329	7670551793289585	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab7/lab7.exe	f78edd6ba91e12ba
+3	85	7667116846277517	CMakeFiles/lab8.dir/lab8/lab8.c.obj	5943bbf0202039b7
+48	1067	7679696611957678	CMakeFiles/lab8.dir/lab8/lab8.cpp.obj	607979f8f3bd038e
+1067	1408	7679696622152336	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab8/lab8.exe	91fb91a532b1e799
+54	264	7682298687538518	CMakeFiles/lab9.dir/lab9/lab9.c.obj	92d7d20897c6b715
+266	455	7682298689653300	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab9/lab9.exe	edcabc3a1b390eaa
+37	134	7682658266172123	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+135	220	7682658267150659	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+38	140	7682658489363873	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+141	218	7682658490388262	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+35	135	7682658607720499	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+136	234	7682658608725797	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+34	143	7682659057480702	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+144	237	7682659058579511	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+40	148	7682660832216753	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+149	238	7682660833304272	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+36	124	7682661421179904	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+125	211	7682661422060989	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+73	463	7682662582536576	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+464	780	7682662586448193	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+39	126	7682663093354477	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+127	215	7682663094231720	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+40	137	7682664170798911	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+138	227	7682664171778267	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+33	138	7682664772497884	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+141	231	7682664773570615	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+55	183	7682664930174243	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+184	317	7682664931460215	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+34	128	7682665138742516	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+129	218	7682665139692442	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
+37	153	7682665570246348	CMakeFiles/lab10.dir/lab10/lab10.c.obj	cf39602081b541af
+153	244	7682665571409594	C:/Users/pawel/OneDrive - Politechnika Krakowska im. Tadeusza Kościuszki/studia/Semestr 4/Metody obliczeniowe/Laboratoria/lab10/lab10.exe	77b346a5c7c5e66d
