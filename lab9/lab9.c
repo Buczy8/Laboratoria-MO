@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-int n = 1000; // Zmniejszona liczba punktów dla testów
+int n = 1000;
 double a = 0.0, b = 1.0;
 double alfa = 0.0, beta = 1.0, gamma = -2.0;
 double phi = 0.0, psi = 1.0, teta = 2.0;
@@ -186,7 +186,7 @@ int main()
     setup_tridiagonal_system(lower, diag, upper, rhs, x, n, h, alfa, beta, gamma, phi, psi, teta);
     thomasAlgorithm(lower, diag, upper, rhs, n + 1);
 
-    double* u = RR_shoot(-10.0, 30.0, n, h, 1e-12, 100);
+    double* u = RR_shoot(-10.0, 30.0, n, h, 1e-13, 100);
     if (u == NULL)
     {
         printf("Błąd: Nie można znaleźć rozwiązania.\n");

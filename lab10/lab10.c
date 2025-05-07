@@ -28,12 +28,13 @@ int main()
 
     long double* t = malloc((n + 1) * sizeof(long double));
     long double* y_bme_stabilne = malloc((n + 1) * sizeof(long double));
+    long double* y_bme_rozniestabilne = malloc((n + 1) * sizeof(long double));
     long double* y_bme_niestabilne = malloc((n + 1) * sizeof(long double));
     long double* y_pme = malloc((n + 1) * sizeof(long double));
     long double* y_pmt = malloc((n + 1) * sizeof(long double));
     long double* y_exact = malloc((n + 1) * sizeof(long double));
 
-    if (!t || !y_bme_stabilne || !y_bme_niestabilne || !y_pme || !y_pmt || !y_exact)
+    if (!t || !y_bme_stabilne || !y_bme_niestabilne || !y_pme || !y_pmt || !y_exact || !y_bme_rozniestabilne)
     {
         printf("Błąd alokacji pamięci.\n");
         return 1;
@@ -42,6 +43,7 @@ int main()
     // Obliczenia dla ustalonego dt = 1e-4
     t[0] = t0;
     y_bme_stabilne[0] = y_0;
+    y_bme_rozniestabilne[0] = y_0;
     y_bme_niestabilne[0] = y_0;
     y_pme[0] = y_0;
     y_pmt[0] = y_0;
@@ -51,25 +53,26 @@ int main()
     {
         t[i] = t[i - 1] + dt;
         y_bme_stabilne[i] = y_bme_stabilne[i - 1] + dt * f(t[i - 1], y_bme_stabilne[i - 1]);
-        y_bme_niestabilne[i] = y_bme_niestabilne[i - 1] + 0.03L * f(t[i - 1], y_bme_niestabilne[i - 1]);
+        y_bme_rozniestabilne[i] = y_bme_rozniestabilne[i - 1] + 0.1L * f(t[i - 1], y_bme_rozniestabilne[i - 1]);
+        y_bme_niestabilne[i] = y_bme_niestabilne[i - 1] + 0.5L * f(t[i - 1], y_bme_niestabilne[i - 1]);
         y_pme[i] = (y_pme[i - 1] + dt * b(t[i])) / (1.0L - dt * a(t[i]));
         y_pmt[i] = (y_pmt[i - 1] + dt / 2.0L * (a(t[i - 1]) * y_pmt[i - 1] + b(t[i - 1]) + b(t[i]))) / (1.0L - dt / 2.0L
             * a(t[i]));
         y_exact[i] = analytic_solution(t[i]);
 
-        fprintf(file, "%.6Le\t%.6Le\t%.6Le\t%.6Le\n", t[i], y_exact[i], y_bme_stabilne[i], y_bme_niestabilne[i]);
+        fprintf(file, "%.6Le\t%.6Le\t%.6Le\t%.6Le\t%.6Le\n", t[i], y_exact[i], y_bme_stabilne[i],y_bme_rozniestabilne[i], y_bme_niestabilne[i]);
         fprintf(file2, "%.6Le\t%.6Le\t%.6Le\n", t[i], y_exact[i], y_pme[i]);
         fprintf(file3, "%.6Le\t%.6Le\t%.6Le\n", t[i], y_exact[i], y_pmt[i]);
     }
 
 
     int num_steps = 10000;
-    long double h_min = 10e-14L;
-    long double h_max = 10e-4L;
+    long double dt_min = 10e-14L;
+    long double dt_max = 10e-3L;
     for (int j = 0; j < num_steps; j++)
     {
-        long double exponent = j * log10l(h_max / h_min) / (num_steps - 1);
-        long double dt2 = h_min * powl(10.0L, exponent);
+        long double exponent = j * log10l(dt_max / dt_min) / (num_steps - 1);
+        long double dt2 = dt_min * powl(10.0L, exponent);
 
         long double* t_local = malloc((n + 1) * sizeof(long double));
         long double* y_bme_stabilne_l = malloc((n + 1) * sizeof(long double));
