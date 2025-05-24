@@ -22,8 +22,6 @@ struct Result
 
 void thomas1(vector<long double>& U, vector<long double>& D, vector<long double>& L, int N);
 void thomas2(vector<long double>& U, vector<long double>& D, vector<long double>& L, vector<long double>& b, int N);
-std::vector<long double> generate_log_steps(long double h_max, long double h_min, int num_steps);
-long double maxAbsoluteError(vector<long double>& analytical, vector<long double>& numerical);
 void LUDecomposition(vector<vector<long double>>& A, vector<int>& index);
 void solve(const vector<vector<long double>>& A, vector<long double>& b, const vector<int>& index);
 
@@ -288,40 +286,6 @@ void thomas2(vector<long double>& U, vector<long double>& D, vector<long double>
     {
         b[i] = (b[i] - U[i] * b[i + 1]) / D[i];
     }
-}
-
-std::vector<long double> generate_log_steps(long double h_max, long double h_min, int num_steps)
-{
-    std::vector<long double> steps;
-    steps.reserve(num_steps);
-
-    long double ratio = pow(h_min / h_max, 1.0 / (num_steps - 1));
-    long double current_h = h_max;
-
-    for (int i = 0; i < num_steps; ++i)
-    {
-        steps.push_back(current_h);
-        current_h *= ratio;
-    }
-
-    return steps;
-}
-
-long double maxAbsoluteError(vector<long double>& analytical, vector<long double>& numerical)
-{
-    long double maxError = 0.0L;
-    size_t size = analytical.size();
-
-    for (size_t i = 0; i < size; ++i)
-    {
-        long double error = fabsl(analytical[i] - numerical[i]);
-        if (error > maxError)
-        {
-            maxError = error;
-        }
-    }
-
-    return maxError;
 }
 
 void LUDecomposition(vector<vector<long double>>& A, vector<int>& index)
