@@ -1,38 +1,41 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <cmath>
-#include <iomanip>
-#include "CALERF.h"
+#include <iostream> // bibliotek do wejścia/wyjścia
+#include <fstream> // bibliotek do obsługi plików
+#include <vector> // bibliotek do przechowywania wektorów
+#include <cmath> // bibliotek do funkcji matematycznych
+#include <iomanip> // bibliotek do formatowania wyjścia
+#include "CALERF.h" // bibliotek do funkcji błędu
 
 using namespace std;
 
-long double tmax = 2.0L;
-long double D = 1.0L;
-long double b = 1.0L;
-long double a = ceill(b + 6.0L * sqrtl(D * tmax));
-long double dt = 0.001L;
+// Parametry podane w zadaniu
+long double tmax = 2.0L; // maksymalny czas
+long double D = 1.0L; // współczynnik dyfuzji
+long double b = 1.0L; // grubość warstwy 
+long double a = ceill(b + 6.0L * sqrtl(D * tmax)); // długość obszaru, w którym rozważamy dyfuzję
+long double dt = 0.001L; // krok czasowy
 
+// Struktura do przechowywania wyników
 struct Result
 {
-    vector<long double> x;
+    vector<long double> x; // Współrzędne przestrzenne
     vector<vector<long double>> numerical; // Wszystkie kroki czasowe - rozwiązanie numeryczne
     vector<vector<long double>> analytical; // Wszystkie kroki czasowe - rozwiązanie analityczne
 };
 
+// Deklaracje pomocniczych funkcji
 void thomas1(vector<long double>& U, vector<long double>& D, vector<long double>& L, int N);
 void thomas2(vector<long double>& U, vector<long double>& D, vector<long double>& L, vector<long double>& b, int N);
-void LUDecomposition(vector<vector<long double>>& A, vector<int>& index);
-void solve(const vector<vector<long double>>& A, vector<long double>& b, const vector<int>& index);
+void LUDecomposition(vector<vector<long double>>& A);
+void solve(const vector<vector<long double>>& A, vector<long double>& b);
 
-Result computeExplicit(long double h)
+// Funkcja do obliczeń numerycznych dla metody KMB
+Result computeKMB(long double h)
 {
     Result result;
-    long double lambda = D * dt / (h * h);
-    cout << "lambda KMB = " << lambda << endl;
+    long double lambda = D * dt / (h * h); // Parametr lambda potrzebny dla metody KMB
 
-    int nx = static_cast<int>((2.0L * a) / h) + 1;
-    int nt = static_cast<int>(tmax / dt) + 1;
+    int nx = static_cast<int>((2.0L * a) / h) + 1; // Liczba punktów w przestrzeni
+    int nt = static_cast<int>(tmax / dt) + 1; // Liczba kroków czasowych
 
     result.x.resize(nx);
     result.numerical.resize(nx, vector<long double>(nt, 0.0L));
@@ -41,20 +44,24 @@ Result computeExplicit(long double h)
     // Inicjalizacja siatki i warunku początkowego
     for (int i = 0; i < nx; ++i)
     {
-        result.x[i] = -a + i * h;
+        result.x[i] = -a + i * h; // Obliczenie współrzędnych przestrzennych
+
+        // Ustawienie warunku początkowego
         if (fabsl(result.x[i]) < b)
             result.numerical[i][0] = 1.0L;
     }
 
-    // Obliczenia czasowe dla metody explicit
+    // Obliczenia czasowe dla metody KMB
     for (int k = 1; k < nt; ++k)
     {
         for (int i = 1; i < nx - 1; ++i)
         {
+            // Obliczenie wartości w punkcie i dla kroku czasowego k według metody KMB
             result.numerical[i][k] = lambda * result.numerical[i - 1][k - 1]
                 + (1.0L - 2.0L * lambda) * result.numerical[i][k - 1]
                 + lambda * result.numerical[i + 1][k - 1];
         }
+        // Warunki brzegowe
         result.numerical[0][k] = 0.0L;
         result.numerical[nx - 1][k] = 0.0L;
     }
@@ -62,39 +69,33 @@ Result computeExplicit(long double h)
     // Obliczenie rozwiązania analitycznego dla wszystkich czasów
     for (int k = 0; k < nt; ++k)
     {
-        long double t = k * dt;
+        long double t = k * dt; // Obliczenie czasu dla kroku k
         for (int i = 0; i < nx; ++i)
         {
-            if (t > 0.0L)
-            {
-                result.analytical[i][k] = 0.5L * calerfpack::erf_LD((result.x[i] + b) / (2.0L * sqrtl(D * t)))
-                    - 0.5L * calerfpack::erf_LD((result.x[i] - b) / (2.0L * sqrtl(D * t)));
-            }
-            else
-            {
-                result.analytical[i][k] = 0.0L;
-            }
+            result.analytical[i][k] = 0.5L * calerfpack::erf_LD((result.x[i] + b) / (2.0L * sqrtl(D * t)))
+                - 0.5L * calerfpack::erf_LD((result.x[i] - b) / (2.0L * sqrtl(D * t)));
+            // Obliczenie rozwiązania analitycznego za pommocą pakietu CALERF dołączonego przez prowadząćego
         }
     }
 
     return result;
 }
 
+// Funkcja do obliczeń numerycznych dla metody Laasonen z wykorzystaniem metody Thomasa
 Result computeLaasonenT(long double h)
 {
     Result result;
-    long double lambda = D * dt / (h * h);
-    cout << "lambda laasonen thomas = " << lambda << endl;
-    int nx = static_cast<int>((2.0L * a) / h) + 1;
-    int nt = static_cast<int>(tmax / dt) + 1;
+    long double lambda = D * dt / (h * h); // Parametr lambda potrzebny dla metody Laasonen
+    int nx = static_cast<int>((2.0L * a) / h) + 1; // Liczba punktów w przestrzeni
+    int nt = static_cast<int>(tmax / dt) + 1; // Liczba kroków czasowych
 
     result.x.resize(nx);
     result.numerical.resize(nx, vector<long double>(nt, 0.0L));
     result.analytical.resize(nx, vector<long double>(nt, 0.0L));
 
-    vector<long double> L(nx, -lambda);
-    vector<long double> Di(nx, 1.0L + 2.0L * lambda);
-    vector<long double> U(nx, -lambda);
+    vector<long double> L(nx, -lambda); // Dolna przekątna macierzy
+    vector<long double> Di(nx, 1.0L + 2.0L * lambda); // Główna przekątna macierzy
+    vector<long double> U(nx, -lambda); // Górna przekątna macierzy
     vector<long double> sol(nx);
 
     // Warunki brzegowe w macierzy
@@ -109,24 +110,29 @@ Result computeLaasonenT(long double h)
     // Inicjalizacja warunku początkowego
     for (int i = 0; i < nx; ++i)
     {
-        result.x[i] = -a + i * h;
+        result.x[i] = -a + i * h; // Obliczenie współrzędnych przestrzennych
+
+        // Ustawienie warunku początkowego
         if (fabsl(result.x[i]) < b)
             result.numerical[i][0] = 1.0L;
     }
 
-    thomas1(U, Di, L, nx);
+    thomas1(U, Di, L, nx); // Dekompozycja macierzy dla metody Thomasa
 
     // Obliczenia czasowe
     for (int k = 1; k < nt; ++k)
     {
+        // Przygotowanie wektora sol do obliczeń
         for (int i = 0; i < nx; ++i)
             sol[i] = result.numerical[i][k - 1];
 
+        thomas2(U, Di, L, sol, nx); // Rozwiązanie układu równań za pomocą metody Thomasa
+
+        // Ustawienie warunków brzegowych
         sol[0] = 0.0L;
         sol[nx - 1] = 0.0L;
 
-        thomas2(U, Di, L, sol, nx);
-
+        // Zapisanie rozwiązania numerycznego dla określonego czasu
         for (int i = 0; i < nx; ++i)
             result.numerical[i][k] = sol[i];
     }
@@ -134,45 +140,42 @@ Result computeLaasonenT(long double h)
     // Obliczenie rozwiązania analitycznego dla wszystkich czasów
     for (int k = 0; k < nt; ++k)
     {
-        long double t = k * dt;
+        long double t = k * dt; // Obliczenie czasu dla kroku k
         for (int i = 0; i < nx; ++i)
         {
             result.analytical[i][k] = 0.5L * calerfpack::erf_LD((result.x[i] + b) / (2.0L * sqrtl(D * t)))
                 - 0.5L * calerfpack::erf_LD((result.x[i] - b) / (2.0L * sqrtl(D * t)));
+            // Obliczenie rozwiązania analitycznego za pommocą pakietu CALERF dołączonego przez prowadząćego
         }
     }
 
     return result;
 }
 
+// Funkcja do obliczeń numerycznych dla metody Laasonen z wykorzystaniem metody dekompozycji LU macierzy pełnej
 Result computeLaasonenLU(long double h)
 {
     Result result;
-    long double lambda = D * dt / (h * h);
-    cout << "lambda  lu = " << lambda << endl;
-    int nx = static_cast<int>((2.0L * a) / h) + 1;
-    int nt = static_cast<int>(tmax / dt) + 1;
+    long double lambda = D * dt / (h * h); // Parametr lambda potrzebny dla metody Laasonen
+    int nx = static_cast<int>((2.0L * a) / h) + 1; // Liczba punktów w przestrzeni
+    int nt = static_cast<int>(tmax / dt) + 1; // Liczba kroków czasowych
 
     result.x.resize(nx);
     result.numerical.resize(nx, vector<long double>(nt, 0.0L));
     result.analytical.resize(nx, vector<long double>(nt, 0.0L));
 
-    vector<vector<long double>> A(nx, vector<long double>(nx, 0.0L));
-    vector<int> index(nx);
+    vector<vector<long double>> A(nx, vector<long double>(nx, 0.0L)); // Macierz A dla dekompozycji LU
     vector<long double> sol(nx);
-    for (int i = 0; i < nx; ++i)
-    {
-        index[i] = i;
-    }
 
     // Budowa macierzy A
     for (int i = 0; i < nx; ++i)
     {
+        // Wypełnienie macierzy A zgodnie z równaniem różnicowym Laasonen
         if (i > 0)
-            A[i][i - 1] = -lambda;
-        A[i][i] = 1.0L + 2.0L * lambda;
+            A[i][i - 1] = -lambda; // element poniżej głównej przekątnej
+        A[i][i] = 1.0L + 2.0L * lambda; // element na głównej przekątnej
         if (i < nx - 1)
-            A[i][i + 1] = -lambda;
+            A[i][i + 1] = -lambda; // element powyżej głównej przekątnej
     }
 
     // Warunki brzegowe
@@ -184,24 +187,28 @@ Result computeLaasonenLU(long double h)
     // Inicjalizacja warunku początkowego
     for (int i = 0; i < nx; ++i)
     {
-        result.x[i] = -a + i * h;
+        result.x[i] = -a + i * h; // Obliczenie współrzędnych przestrzennych
+
         if (fabsl(result.x[i]) < b)
             result.numerical[i][0] = 1.0L;
     }
 
     // Dekompozycja LU
-    LUDecomposition(A, index);
+    LUDecomposition(A);
 
     // Obliczenia czasowe
     for (int k = 1; k < nt; ++k)
     {
+        // Przygotowanie wektora sol z poprzedniego kroku czasowego
         for (int i = 0; i < nx; ++i)
             sol[i] = result.numerical[i][k - 1];
 
+        // Ustawienie warunków brzegowych
         sol[0] = 0.0L;
         sol[nx - 1] = 0.0L;
 
-        solve(A, sol, index);
+        // Rozwiązanie układu równań Ax = b
+        solve(A, sol);
 
         for (int i = 0; i < nx; ++i)
             result.numerical[i][k] = sol[i];
@@ -210,18 +217,13 @@ Result computeLaasonenLU(long double h)
     // Obliczenie rozwiązania analitycznego
     for (int k = 0; k < nt; ++k)
     {
-        long double t = k * dt;
+        long double t = k * dt; // Obliczenie czasu dla kroku k
+
+        // Obliczenie rozwiązania analitycznego dla wszystkich punktów przestrzennych
         for (int i = 0; i < nx; ++i)
         {
-            if (t > 0.0L)
-            {
-                result.analytical[i][k] = 0.5L * erf((result.x[i] + b) / (2.0L * sqrtl(D * t)))
-                    - 0.5L * erf((result.x[i] - b) / (2.0L * sqrtl(D * t)));
-            }
-            else
-            {
-                result.analytical[i][k] = 0.0L;
-            }
+            result.analytical[i][k] = 0.5L * erf((result.x[i] + b) / (2.0L * sqrtl(D * t)))
+                - 0.5L * erf((result.x[i] - b) / (2.0L * sqrtl(D * t)));
         }
     }
 
@@ -230,23 +232,25 @@ Result computeLaasonenLU(long double h)
 
 int main()
 {
-    long double h_explicit = 0.05L;
-    long double h_laasonen = sqrt(10.0L) / 100.0L;
-    int nt = static_cast<int>(tmax / dt) + 1;
+    long double h_KMB = 0.05L;
+    // Krok przestrzenny dla metody KMB dobrany tak żeby spełniał warunek stabilności (lambda = 0.4)
+    long double h_laasonen = sqrt(10.0L) / 100.0L; // Krok przestrzenny dla metody Laasonen  dobrany tak aby lambda = 1
+    int nt = static_cast<int>(tmax / dt) + 1; // Liczba kroków czasowych
 
-    Result explicitResult = computeExplicit(h_explicit);
+    Result KMBResult = computeKMB(h_KMB);
     Result laasonenResultT = computeLaasonenT(h_laasonen);
     Result laasonenResultLU = computeLaasonenLU(h_laasonen);
 
-    // Zapis wyników explicit
+    // Zapis wyników KMB
     ofstream fp2("KMB.txt");
-    fp2 << scientific << setprecision(15);
+    fp2 << scientific << setprecision(15); // Ustawienie precyzji zapisu do pliku
 
-    for (int i = 0; i < explicitResult.x.size(); ++i)
+    // Zapis współrzędnych przestrzennych i wartości numerycznych oraz analitycznych dla metody KMB
+    for (int i = 0; i < KMBResult.x.size(); ++i)
     {
-        fp2 << explicitResult.x[i] << " "
-            << explicitResult.numerical[i][nt - 1] << " "
-            << explicitResult.analytical[i][nt - 1] << "\n";
+        fp2 << KMBResult.x[i] << " "
+            << KMBResult.numerical[i][nt - 1] << " "
+            << KMBResult.analytical[i][nt - 1] << "\n";
     }
     fp2.close();
 
@@ -254,6 +258,7 @@ int main()
     ofstream fp1("laasonen.txt");
     fp1 << scientific << setprecision(15);
 
+    // Zapis współrzędnych przestrzennych i wartości numerycznych oraz analitycznych dla metody Laasonen
     for (int i = 0; i < laasonenResultLU.x.size(); ++i)
     {
         fp1 << laasonenResultLU.x[i] << " "
@@ -266,6 +271,7 @@ int main()
     return 0;
 }
 
+// eliminacja Gaussa która przekształca tylko jeden wiersz w każdym kroku redukcji
 void thomas1(vector<long double>& U, vector<long double>& D, vector<long double>& L, int N)
 {
     for (int i = 1; i < N; i++)
@@ -276,82 +282,64 @@ void thomas1(vector<long double>& U, vector<long double>& D, vector<long double>
 
 void thomas2(vector<long double>& U, vector<long double>& D, vector<long double>& L, vector<long double>& b, int N)
 {
+    // Eliminacja w przód – modyfikacja prawej strony
     for (int i = 1; i < N; i++)
     {
         b[i] = b[i] - (L[i - 1] * (1.0L / D[i - 1]) * b[i - 1]);
     }
+
+    // Rozwiązanie ostatniego równania (najniższego w macierzy)
     b[N - 1] = b[N - 1] / D[N - 1];
 
+    // Podstawianie wstecz – obliczanie pozostałych niewiadomych
     for (int i = N - 2; i >= 0; i--)
     {
         b[i] = (b[i] - U[i] * b[i + 1]) / D[i];
     }
 }
 
-void LUDecomposition(vector<vector<long double>>& A, vector<int>& index)
+// Faktoryzacja LU macierzy A
+void LUDecomposition(vector<vector<long double>>& A)
 {
     int N = (int)A.size();
-    index.resize(N);
-    for (int i = 0; i < N; ++i) index[i] = i;
 
     int i, j, k = 0;
     for (k = 0; k < N - 1; k++)
     {
+        // Eliminacja Gaussa macierzy A
         for (i = k + 1; i < N; i++)
         {
-            if (fabsl(A[index[k]][k]) <= 10e-10)
-            {
-                int maxIndex = k;
-                for (j = k + 1; j < N; j++)
-                {
-                    if (fabsl(A[index[j]][k]) > fabsl(A[index[maxIndex]][k]))
-                    {
-                        maxIndex = j;
-                    }
-                }
-                if (maxIndex != k)
-                {
-                    int tempIndex = index[k];
-                    index[k] = index[maxIndex];
-                    index[maxIndex] = tempIndex;
-                }
-            }
-            long double factor = A[index[i]][k] / A[index[k]][k];
+            long double factor = A[i][k] / A[k][k]; // współczynnik eliminacji
             for (j = k; j < N; j++)
             {
-                A[index[i]][j] -= factor * A[index[k]][j];
+                A[i][j] -= factor * A[k][j]; // modyfikacja macierzy powyżej głównej przekątnej
             }
-            A[index[i]][k] = factor;
+            A[i][k] = factor; // zapis współczynnika do macierzy poniżej głównej przekątnej
         }
     }
 }
 
-
-void solve(const vector<vector<long double>>& A, vector<long double>& b, const vector<int>& index)
+// Rozwiązywanie układu równań Ax = b przy użyciu wcześniej wykonanej faktoryzacji LU
+void solve(const vector<vector<long double>>& A, vector<long double>& b)
 {
     int N = (int)A.size();
 
-    //      y-1 = b_1
-    //      l_21*y_1 + y_2 = b_2
-    //      l_n1*y_1 + l_n2*y_2 + ... + y_n = b_n
-
+    // Rozwiązanie układu Ly = b (eliminacja w przód)
     for (int i = 0; i < N; i++)
     {
         for (int j = 0; j < i; j++)
         {
-            b[index[i]] -= A[index[i]][j] * b[index[j]];
+            b[i] -= A[i][j] * b[j];
         }
     }
 
-    //    u_11*x_1 + u_12*x_2 + ... + x_n = y_1
-    //    u_22*x_2 + ... + x_n = y_2
-    //    u_nn*x_n = y_n
+    // Rozwiązanie układu Ux = y (podstawianie wstecz)
     for (int i = N - 1; i >= 0; i--)
     {
         for (int j = i + 1; j < N; j++)
         {
-            b[index[i]] -= A[index[i]][j] * b[index[j]];
+            b[i] -= A[i][j] * b[j];
         }
-        b[index[i]] /= A[index[i]][i];
+        b[i] /= A[i][i];
     }
 }
